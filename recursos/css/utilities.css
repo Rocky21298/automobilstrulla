@@ -1,0 +1,148 @@
+/*  
+*  Sobrecarregues dels estils dels components de bootstrap 
+*   
+*  1.0 - Navbar
+*  2.0 - Breadcrumbs
+*  3.0 - Buttons
+*  4.0 - Modal
+*  5.0 - Formularis
+*  6.0 - Media queries
+*    6.1 - MQs mobil
+*    6.2 - MQs tablet
+*/
+
+/*** 1.0 - Navbar ***/
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  font-family: 'Oswald';
+  font-size: 1000%;
+  line-height: normal;
+  background: -webkit-linear-gradient(white, #F6D42F);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.navbar-brand:hover {
+  background: -webkit-linear-gradient(white, #F6D42F);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-dark {
+  --bs-bg-opacity: 1;
+  background-color: #444444!important;
+}
+/* Barra de navegacio */
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  font-family: 'Oswald';
+  font-weight: 500;
+  text-transform: uppercase;
+}
+/* Al pasar per sobre canvia el color */
+.navbar-dark .navbar-nav>li>a:hover, .navbar-dark .navbar-nav>li>a:focus {
+  color: #F6D42F!important;
+  text-decoration: none;
+}
+.navbar-dark .nav-link.active {
+  color: #F6D42F!important;
+}
+
+/*** 2.0 - Breadcrumbs ***/
+.breadcrumbs {
+  margin: 2% 2% 2% 2%;
+  font-family: 'Oswald';
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #c1c1c1;
+}
+.breadcrumbs ol>li>a {
+  color: #c1c1c1!important;
+  text-decoration: none;
+}
+.breadcrumbs ol>li>a:hover {
+  color: #F22248!important;
+}
+.breadcrumb>.active {
+  color: #F6D42F!important;
+}
+.breadcrumb>li+li:before {
+/*Acoloreix el divisor dels breadcrumbs*/
+  color: #F6D42F!important;
+}
+
+/*** 3.0 - Buttons ***/
+.btn-dark {
+  color: #030303;
+  background-color: #F6D42F;
+  border-color: #F6D42F;
+  font-family: 'Oswald';
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.btn-dark:hover {
+  text-decoration: none;
+}
+
+/*** 4.0 - Modal ***/
+.modal-content {
+  background-color: #4f4f4f;
+}
+.modal-header {
+  border-bottom: none;
+}
+.modal-footer {
+  border-top: none;
+}
+.modal-title {
+  font-family: 'Oswald';
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #c1c1c1;
+  border-bottom: none;
+  font-size: 120%;
+  letter-spacing: 0.1em;
+}
+.container-fluid>img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.modal-dialog{
+  overflow-y: initial !important
+}
+
+/*** 5.0 - Formularis ***/
+.form-check-input:checked {
+  background-color: #F6D42F;
+  border-color: #F6D42F;
+}
+
+/*** 6.0 - Media queries ***/
+
+/*** 6.1 - MQs mobil ***/
+@media only screen and (min-width: 0px) and (max-width: 580px) {
+  .modal-dialog {
+    width: 60%;
+  }
+  .navbar-brand {
+    font-size: 600%;
+  }
+}
+
+/*** 6.2 - MQs tablet ***/
+@media only screen and (min-width: 580px) and (max-width: 1024px) {
+  .modal-dialog {
+    width: 90%;
+  }
+  .navbar-brand {
+    font-size: 800%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    max-width: 100%;
+  }
+}

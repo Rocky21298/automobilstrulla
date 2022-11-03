@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+
+  <!--META TAGS-->
+  <meta charset="UTF-8">
+  <meta name="description" content="Compra i venda de tot tipus de vehicles">
+  <meta name="keywords" content="Vehicles, comprar vehicle, cotxe, automòbils">
+  <meta name="author" content="Roc Alvarez Trulla">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--TITOL PAGINA-->
+  <title>Automòbils Trulla</title>
+
+  <!--FAVICON-->
+  <link rel="shortcut icon" type="image/svg+xml" href="./recursos/fav/favicon.svg">
+  <link rel="shortcut icon" type="image/png" href="./recursos/fav/favicon.png">
+
+  <!--STYLESHEET de BOOTSRAP-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!--SCRIPTS de BOOTSRAP-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+  <!--INICIALITZACIO FONTS I ICONES GOOGLE-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!--ICONES-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--FULLS D'ESTIL CSS-->
+  <link rel="stylesheet" href="../recursos/css/stylesheets.css" title="Full estil principal">
+
+</head>
+
+<body>
+
+  <!-- Capcelera -->
+  <header>
+    <a href="../index.html">
+      <img class="imatge-logocapcelera" src="../recursos/img/logo.png" alt="Logo">
+    </a>
+    <nav class="navbar navbar-expand-lg mx-auto navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../index.html">Inici</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./vehicles.html">Vehicles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./quiSom.html">Qui som</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contacte.html">Contacte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./iniciaSessio.html ">Inicia sessió</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./registrat.html">Registrat</a>
+            </li>
+            <!-- Icona extreta posant el nom de un d'aquest link: https://fonts.google.com/icons?icon.platform=web&icon.set=Material+Icons -->
+            <!-- Perfil -->
+            <li class="nav-item">
+              <a class="nav-link active" data-bs-toggle="tooltip" href="#">
+                <span class="material-icons" style="font-weight: 500;">
+                  account_circle
+                </span>
+              </a>
+            </li>
+            <!-- Carrito -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tooltip" href="./cistella.html">
+                <span class="material-icons" style="font-weight: 500;">
+                  shopping_cart
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="breadcrumbs">
+      <nav style="--bs-breadcrumb-divider:'>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Inici</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Perfil</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!------------ Contingut ------------>
+  <main>
+    <!-- Concessionari multimarca Andorra -->
+    <section>
+      <div class="perfil">
+        <div class="perfiltext">
+          <h1>Perfil</h1>
+          <p class="text-white-50 mb-5">Gràcies per comptar amb nosaltres</p>
+
+          <div class="form-outline form-white mb-4">
+            <label class="form-label">Nom</label>
+            <hr style="margin-left: 0%;">
+          </div>
+          <div class="form-outline form-white mb-4">
+            <label class="form-label">Cognoms</label>
+            <hr style="margin-left: 0%;">
+          </div>
+          <div class="form-outline form-white mb-4">
+            <label class="form-label"">Email</label>
+            <hr style=" margin-left: 0%;">
+          </div>
+          <div class=" form-outline form-white mb-4">
+            <label class="form-label">Telèfon</label>
+            <hr style="margin-left: 0%;">
+          </div>
+
+          <button type="button" name="boto-sessio">Enviar</button>
+        </div>
+
+        <img src="../recursos/img/equip/membre1.jpg" class="perfilimg">
+
+      </div>
+    </section>
+    <section>
+
+    </section>
+  </main>
+
+
+
+
+
+  <!------------ Peu de pagina ------------>
+  <footer>
+    <div class="contingut-peu">
+      <div id="comiat">
+        <a id="logo-peu" href="#">Automòbils trulla</a>
+        <p>Troba el teu vehicle ideal</p>
+      </div>
+      <div id="xarxes-socials">
+        <h2 class="titol-peu">Conecta</h2>
+        <div style="margin-left: 4%; margin-right: 4%;">
+          <ul class="enllacos-peu">
+            <li>
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+            </li>
+            <li>
+              <a href="#" class="fa fa-instagram"></a>
+              <a href="#" class="fa fa-youtube"></a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div id="sobre-nosaltres">
+        <h2 class="titol-peu">Sobre Automòbils Trulla</h2>
+        <ul class="enllacos-peu">
+          <li>
+            <a href="./quiSom.html">Qui som</a>
+          </li>
+          <li>
+            <a href="./contacte.html">Contacta amb nosaltres</a>
+          </li>
+          <li>
+            <a href="./ods.html">ODS</a>
+          </li>
+          <li>
+            <a href="./faqs.html">FAQs</a>
+          </li>
+        </ul>
+      </div>
+      <div id="informacio-legal">
+        <h2 class="titol-peu">Informació Legal</h2>
+        <ul class="enllacos-peu">
+          <li>
+            <a class="disabled">Avís legal</a>
+          </li>
+          <li>
+            <a class="disabled">Termes d'ús</a>
+          </li>
+          <li>
+            <a class="disabled">Política de cookies</a>
+          </li>
+          <li>
+            <a class="disabled">Política de privacitat</a>
+          </li>
+        </ul>
+      </div>
+      <div id="llicencia">
+        <img src="../recursos/img/llicencia/cc_icon_white_x2.png" alt="CC">
+        <img src="../recursos/img/llicencia/attribution_icon_white_x2.png" alt="BY">
+        <img src="../recursos/img/llicencia/sa_white_x2.png" alt="SA">
+        <br>
+        <span>El contingut està disponible sota la llicència <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank">Atribució - CompartirIgual
+            4.0</a>
+          si no s'indica el contrari.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

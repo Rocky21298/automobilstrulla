@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+
+  <!--META TAGS-->
+  <meta charset="UTF-8">
+  <meta name="description" content="Compra i venda de tot tipus de vehicles">
+  <meta name="keywords" content="Vehicles, comprar vehicle, cotxe, automòbils">
+  <meta name="author" content="Roc Alvarez Trulla">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--TITOL PAGINA-->
+  <title>Automòbils Trulla</title>
+
+  <!--FAVICON-->
+  <link rel="shortcut icon" type="image/svg+xml" href="./recursos/fav/favicon.svg">
+  <link rel="shortcut icon" type="image/png" href="./recursos/fav/favicon.png">
+
+  <!--STYLESHEET de BOOTSRAP-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!--SCRIPTS de BOOTSRAP-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+  <!--INICIALITZACIO FONTS I ICONES GOOGLE-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!--ICONES-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--FULLS D'ESTIL CSS-->
+  <link rel="stylesheet" href="./recursos/css/stylesheets.css" title="Full estil principal">
+
+    <!--SCRIPTS PROPIS-->
+    <!-- <script src="../recursos/js/sessioLocal.js"></script> -->
+    
+</head>
+
+<body>
+
+  <!-- Capcelera -->
+  <header>
+    <a href="./index.html">
+      <img class="imatge-logocapcelera" src="./recursos/img/logo.png" alt="Logo">
+    </a>
+    <nav class="navbar navbar-expand-lg mx-auto navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Inici</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pagines/vehicles.html">Vehicles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pagines/quiSom.html">Qui som</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pagines/contacte.html">Contacte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pagines/iniciaSessio.html ">Inicia sessió</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="#" data-toggle="modal" data-target="#modal-registrat">Registrat</a>
+            </li>
+            <!-- Icona extreta posant el nom de un d'aquest link: https://fonts.google.com/icons?icon.platform=web&icon.set=Material+Icons -->
+            <!-- Perfil -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tooltip" href="./pagines/perfil.html">
+                <span class="material-icons" style="font-weight: 500;">
+                  account_circle
+                </span>
+              </a>
+            </li>
+            <!-- Carrito -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tooltip" href="./pagines/cistella.html">
+                <span class="material-icons" style="font-weight: 500;">
+                  shopping_cart
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="breadcrumbs">
+      <nav style="--bs-breadcrumb-divider:'>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Inici</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Modal Registrat-->
+  <div class="modal" id="modal-registrat">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header d-flex align-items-start">
+            <div><h2 class="modal-title">Registrat</h2>
+            <p class="aclariment">El camps marcats amb * son obligatoris.</p></div>
+            <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Formulari entrada dades TV2.1 -->
+        <form method="post" id="colaboraForm" name="colaboraForm">
+            <div class="modal-body form-body">
+                <fieldset>
+                    <legend>Dades personals</legend>
+
+                    <!-- Nom i cognom -->
+                    <!-- Per fer aquesta validacio, he volgut tindre en compte -->
+                    <!-- les variant cultural d'arreu del mon. Per aixo es poden -->
+                    <!-- introduir noms que no comencen en majuscula o alguns caracters -->
+                    <!-- especials, pero no mes de tres lletres iguals. -->
+                    <!-- Ex.: et pots dir "ur'Haaöel-Synvadisnky", pero no "Aaaaaaa" -->
+                    <label for="fname">Nom*</label><br>
+                    <input type="text" id="fname" name="fname"
+                        pattern="^(?=.{2,20}$)(([A-Za-zÀ-ÖØ-öø-ÿ\s'\-])\2?(?!\2))+$"
+                        required><br>
+                    <div id="errorNom"> </div>
+
+                    <!-- <script>
+                        document.getElementById("fname").addEventListener("blur", mostraErrorNom, false);
+                        function mostraErrorNom() {
+                        
+                            let campNom = document.getElementById('fname');
+                            let nomExp = /^(?=.{2,20}$)(([A-Za-zÀ-ÖØ-öø-ÿ\s'\-])\2?(?!\2))+$/;
+                        
+                            if (nomExp.test(campNom.value)) {
+                                document.getElementById('errorNom').textContent = " ";
+                            } else {
+                                document.getElementById('errorNom').textContent = "Has d'introduir un nom";
+                            }
+                        }
+                    </script> -->
+
+                    <label for="lname">Primer cognom*</label><br>
+                    <input type="text" id="lname" name="lname"
+                        pattern="^(?=.{2,20}$)(([A-Za-zÀ-ÖØ-öø-ÿ\s'\-])\2?(?!\2))+$"
+                        required><br>
+                    <div id = "errorCognom"> </div>
+
+                    <!-- Data naixement -->
+                    <label for="dataNaix">Data de naixement*</label><br>
+                    <input type="date" id="dataNaix" name="dataNaix" 
+                        max="2010-12-31" min="1900-01-01" 
+                        pattern="\d{4}-\d{2}-\d{2}" 
+                        required><br>
+                    <div id = "errorData"> </div>
+
+                </fieldset>
+                <hr>
+                <fieldset>
+                    <legend>Dades de contacte</legend>
+
+                    <!-- Email -->
+                    <label for="email">Email*</label><br>
+                    <input type="email" id="mailColaborador" name="email" 
+                        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                        required><br>
+                    <div id = "errorEmail"> </div>
+
+                    <!-- Telefon -->
+                    <!-- Per desenvolupar el pattern s'ha consultat: https://en.wikipedia.org/wiki/Telephone_numbers_in_Andorra -->
+                    <!-- Format: +376-666610-->
+                    <!-- Cal que comenci per +376-8/+376-7/+376-3/+376-4/+376-6 seguit de 5 xifres-->
+                    <label for="numeroTel">Telèfon*</label><br>
+                    <input type="tel" id="telefon" name="telefon" 
+                        pattern="^\+376-(8|7|3|4|6)[0-9]{5}$" value="+376-"
+                        required><br>
+                    <div id = "errorTel"> </div>
+
+                </fieldset>
+                <hr>
+                <fieldset>
+                    <legend>Residencia</legend>
+                    <!-- Adreca -->
+                    <!-- Format: TipusVia. Nom de la Via, 33-->
+                    <!-- TipusVia: D'1 a 5 caracters seguit d'un punt (C., Rbla., ...)-->
+                    <!-- Nom de la via: Admet guions, apostrofs, espais, lletres i vocals accentuades. min 3 caracters, max 42. seguit d'una coma.-->
+                    <!-- Numero: de l'1 al 999-->
+                    <label for="adreca">Adreça*</label><br>
+                    <input type="text" id="adreca" name="adreca"
+                        pattern="^\w{1,5}\.\s[A-Za-zÀ-ú\s'\-]{3,42},\s\d{1,3}$"
+                        title="Ex.: Av. Bonaventura Riberaygua, 42" required><br>
+                    <div id = "errorAdr"> </div>
+
+                    <!-- Poblacio -->
+                    <!-- Per desenvolupar el pattern s'ha consultat: https://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Andorra -->
+                    <!-- Poble amb nom mes curt: Pal (3)-->
+                    <!-- Poble amb nom mes llarg: Els Vilars d'Engordany (23)-->
+                    <!-- Nomes s'accepten apostrofs, gions (Escaldes-Engordany) espais, lletres i vocals accentuades-->
+                    <label for="poblacio">Població*</label><br>
+                    <input type="text" id="poblacio" name="poblacio" pattern="^[A-Za-zÀ-ú\s'\-]{3,23}$"
+                        title="Insereix una poblacio valida" required><br>
+                    <div id = "errorPob"> </div>
+
+                    <!-- Codi Postal (Combobox) -->
+                    <!-- He utilitzat combobox per als codis postals perque el regex era facil -->
+                    <!-- i aixi testo mes tipus d'input. -->
+                    <!-- En la validacio Javascript per mostrar el missatge d'error -->
+                    <!-- si que utilitzo l'expressio regular seguent: /^AD[1-7]00$/ -->
+                    <label for="cp">Codi Postal*</label><br>
+                    <select id="cp" name="cp" required>
+                        <option value=""> </option>
+                        <option value="AD100">AD100</option>
+                        <option value="AD200">AD200</option>
+                        <option value="AD300">AD300</option>
+                        <option value="AD400">AD400</option>
+                        <option value="AD500">AD500</option>
+                        <option value="AD600">AD600</option>
+                        <option value="AD700">AD700</option>
+                    </select><br>
+                    <div id = "errorCP"> </div>
+
+                </fieldset>
+                <fieldset disabled>
+                    <!-- Pais -->
+                    <!-- com exigim numero de telf d'and, nomes pot viure dins d'Andorra -->
+                    <!-- per tant, aquest input no es editable -->
+                    <label for="pais">País*</label><br>
+                    <input type="text" name="pais" value="Principat d'Andorra" readonly><br>
+                </fieldset>
+                <hr>
+                <fieldset>
+                    <legend>Detalls col·laboració</legend>
+                    <!-- Checkboxes -->
+                    <label for="colabora">En què vols col·laborar?</label><br>
+                    <input class="form-check-input" type="checkbox">
+                    <label class="check-label" for="moderador"> Vull ser moderador</label><br>
+                    <input class="form-check-input" type="checkbox">
+                    <label class="check-label" for="escriptor"> Vull ser escriptor</label><br>
+                    <input class="form-check-input" type="checkbox">
+                    <label class="check-label" for="fotograf"> Vull ser fotògraf de concerts</label><br>
+
+                    <!-- IBAN -->
+                    <!-- Identificadors dels bancs extrets del correu per pagar la matricula de la UdA -->
+                    <!--format:AD[checksum 2 digits] [identificador banc 4 digits] -->
+                    <label for="iban">On vols que et paguem?*</label><br>
+                    <input id="iban" type="text" name="iban"
+                        pattern="^AD\d{2}\s(0001|0008|0003|0007|0025)\s\d{4}\s\d{4}\s\d{4}\s\d{4}$"
+                        required>
+                    <div id = "errorIban"> </div>
+                    
+                </fieldset>
+                <hr>
+                <fieldset>
+                    <legend>Contrasenya Intranet</legend>
+                    <!-- Contrasenya -->
+                    <label for="password">Introdueix contrasenya*</label><br>
+                    <input id="password" name="password" type="password"
+                        pattern="^(?=.*\d{2,})(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$"
+                        required>
+                    <div id = "errorPass"> </div>
+
+                    <!-- Confirmar contrasenya -->
+                    <label for="confirm_password">Confirma contrasenya*</label><br>
+                    <input id="confirm" name="confirm" type="password" pattern="" required>
+                    <div id = "errorConfirm"> </div>
+
+                </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary btn-dark" form="colaboraForm"
+                    required="required">Registrar
+                    alta</button>
+            </div>
+        </form>
+        <div class="modal-footer">
+            <button class="btn btn-primary btn-dark" id="botoCookie">Veure Cookie</button>
+            <p id="cookies"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script del formulari -->
+  <!-- el coloco aqui dins ja que d'aquesta forma al JS no s'han de declarar les variables globals -->
+  <script src="./recursos/js/formulari-registrat.js"></script>
+
+  <!-- Contingut -->
+  <main>
+
+    <!--Imatge capcalera-->
+    <div class="imatge-capcalera">
+      <div class="llegibilitat-capcalera">
+        <h1>Automòbils Trulla</h1>
+        <a>Concessionari multi-marca de vehicles nous, semi-nous i d'ocasió</a>
+      </div>
+    </div>
+
+    <!--Contingut de la pagina-->
+    <section>
+      <h1 style="text-align: center;">Vehicles destacats</h1>
+      <div class="galeria-imatges">
+        <figure class="marc-galeria">
+          <a href="./pagines/vehicleespecific.html">
+            <img class="imatge-galeria" src="./recursos/img/vehicles/Nissan-GTR1/gtr1.jpg" alt="Nissan GTR">
+          </a>
+          <figcaption>
+            <h6>Nissan GTR</h6>
+            <a>Nissan GTR 570cv. Vehicle amb garantia de 12 mesos. Extres: - Vinil Lila color original del cotxe BLAU -
+              Canvi auto/sequencial - Pantalla tàctil amb Navegador GPS - Bluetooth
+              Tel/Audio - Seients baquets de cuir elèctrics i calefactables - Salpicadero de Cuir - Interior de carbono
+              - Roll Cage - Capó amb entrades d'aire suplementaries - Bi-Xenon amb LED - Sensor
+              llums - Sensor de parking amb càmera - Pinses de fre Brembo 6 pistons - Linea Armytrix - etc...</a>
+          </figcaption>
+        </figure>
+        <figure class="marc-galeria">
+          <a href="./pagines/vehicleespecific.html">
+            <img class="imatge-galeria" src="./recursos/img/vehicles/Audi-RS61/rs61.jpg" alt="Audi RS6">
+          </a>
+          <figcaption>
+            <h6>Audi RS6</h6>
+            <a>Audi RS6 25 Aniversari Quattro 600cv. Vehicle molt ben equipat edició especial i amb 12 mesos de garantia
+              inclosos. Extres: - Frens ceràmics - Rodes de darrere direccoionals - Escapament Milltek - Canvi
+              Auto/Sequencial - Bluetooth Tel/Audio - Climatització
+              automàtica davant i darrere - Llums full LEDS - Keyless arancada sense clau - Sensor de parking amb càmera
+              devant i
+              darrere 360 - Llandes aleació 22" - Vidres tintats - Porta de maleter elèctrica -
+              etc...</a>
+          </figcaption>
+        </figure>
+        <figure class="marc-galeria">
+          <a href="./pagines/vehicleespecific.html">
+            <img class="imatge-galeria" src="./recursos/img/vehicles/Mini-John-Cooper-Works1/mini1.jpg"
+              alt="Mini John Cooper Works">
+          </a>
+          <figcaption>
+            <h6>Mini John Cooper Works</h6>
+            <a>Mini John Cooper Works 2.0 Turbo amb 231cv. Vehicle Garantia 12 mesos. Extres: - Canvi automàtic amb
+              leves al volant - Aleró Mini Challenge - Navegador Professional - Seients Backets Alcantara JCW -
+              Climatitzador Automàtic - Volant JCW multifoncions - Regulador de Velocitat - Sistema Hi-Fi Harman Kardon
+              amb USB - Bluetooth - Llum Bi-xenon automàtic i llum de dia de Led - Limpia automàtic - Kit aero dinamic
+              JCW - etc...</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Video i audio -->
+    <section>
+      <h1>Video i audio vehicle</h1>
+      <div style="display: flex;">
+        <!--Video-->
+        <!--Botó-->
+        <div class="boton-modal" style="width: 70%;">
+          <label for="btn-modal" style="width: 70%;">
+            <h2 style="color: black; text-align: center; vertical-align: center;">
+              Obrir video
+            </h2>
+          </label>
+        </div>
+        <!--Fi de Botó-->
+        <!--Finestra Modal-->
+        <input type="checkbox" id="btn-modal">
+        <div class="container-modal">
+          <div class="content-modal">
+            <iframe src="https://www.youtube.com/embed/vlDOjTaaEdA?start=49" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+            <div class="btn-cerrar">
+              <label for="btn-modal">Tancar</label>
+            </div>
+          </div>
+          <label for="btn-modal" class="cerrar-modal"></label>
+        </div>
+        <!--Fi de Finestra Modal-->
+        <audio width="30%" controls>
+          <source src="./recursos/aud/GTRAudio.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </section>
+
+
+    <!-- Concessionari multimarca Andorra -->
+    <section>
+      <h1>Concessionari Multimarca Andorra</h1>
+      <div class="concessionari">
+        <img src="./recursos/img/portada.jpg" class="concessionariimg">
+        <p class="concessionaritext">Automòbils trulla som un concessionari multi-marca de vehicles nous, semi-nous i
+          d’ocasió. Comptem amb els
+          millors proveïdors i amb una extensa experiència en compra-venda de vehicles. La nostra prioritat és el
+          tracte personalitzat i adaptat a cada client.</p>
+      </div>
+    </section>
+
+    <!--contacta/adreça/horari-->
+    <section>
+      <div class="galeria-imatges" style="text-align: center;">
+        <figure class="marc-galeria">
+          <h2>Contacte</h2>
+          <ul style="list-style: none;">
+            <li>info@empresa.com</li>
+            <li>+376 345 895</li>
+          </ul>
+        </figure>
+        <figure class="marc-galeria">
+          <h2>Adreça</h2>
+          <a>Carretera General 1, Naus Locals 1 i 2
+            AD200 Encamp</a>
+        </figure>
+        <figure class="marc-galeria">
+          <h2>Horari</h2>
+          <ul style="list-style: none;">
+            <li>Dilluns a Divendres:</li>
+            <li>09:30 a 13:30h</li>
+            <li>15:30 a 19:30h</li>
+          </ul>
+        </figure>
+      </div>
+    </section>
+
+    <!---Mapa-->
+    <section style="text-align: center;">
+      <h1>
+        Troba'ns aquí
+        <span class="material-icons" style="font-weight: 500;">
+          location_on
+        </span>
+      </h1>
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d735.1161540530355!2d1.5627351696572653!3d42.52418421536387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12af5f7eb5f53ecd%3A0xb3080b730b919f32!2sCotxes%20M.L.%20Autom%C3%B2bils%20%7C%20Coches%20Andorra!5e0!3m2!1ses!2sad!4v1665704552940!5m2!1ses!2sad"
+          width="100%" height="450"
+          style="border:0; align-items:center; justify-content: center; flex-direction: column;" allowfullscreen=""
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+  <!------------ Peu de pagina ------------>
+  <footer>
+    <div class="contingut-peu">
+      <div id="comiat">
+        <a id="logo-peu" href="#">Automòbils trulla</a>
+        <p>Troba el teu vehicle ideal</p>
+      </div>
+      <div id="xarxes-socials">
+        <h2 class="titol-peu">Conecta</h2>
+        <div style="margin-left: 4%; margin-right: 4%;">
+          <ul class="enllacos-peu">
+            <li>
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+            </li>
+            <li>
+              <a href="#" class="fa fa-instagram"></a>
+              <a href="#" class="fa fa-youtube"></a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div id="sobre-nosaltres">
+        <h2 class="titol-peu">Sobre Automòbils Trulla</h2>
+        <ul class="enllacos-peu">
+          <li>
+            <a href="./pagines/quiSom.html">Qui som</a>
+          </li>
+          <li>
+            <a href="./pagines/contacte.html">Contacta amb nosaltres</a>
+          </li>
+          <li>
+            <a href="./pagines/ods.html">ODS</a>
+          </li>
+          <li>
+            <a href="./pagines/faqs.html">FAQs</a>
+          </li>
+        </ul>
+      </div>
+      <div id="informacio-legal">
+        <h2 class="titol-peu">Informació Legal</h2>
+        <ul class="enllacos-peu">
+          <li>
+            <a class="disabled">Avís legal</a>
+          </li>
+          <li>
+            <a class="disabled">Termes d'ús</a>
+          </li>
+          <li>
+            <a class="disabled">Política de cookies</a>
+          </li>
+          <li>
+            <a class="disabled">Política de privacitat</a>
+          </li>
+        </ul>
+      </div>
+      <div id="llicencia">
+        <img src="./recursos/img/llicencia/cc_icon_white_x2.png" alt="CC">
+        <img src="./recursos/img/llicencia/attribution_icon_white_x2.png" alt="BY">
+        <img src="./recursos/img/llicencia/sa_white_x2.png" alt="SA">
+        <br>
+        <span>El contingut està disponible sota la llicència <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank">Atribució - CompartirIgual
+            4.0</a>
+          si no s'indica el contrari.
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

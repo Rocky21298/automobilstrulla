@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+
+  <!--META TAGS-->
+  <meta charset="UTF-8">
+  <meta name="description" content="Compra i venda de tot tipus de vehicles">
+  <meta name="keywords" content="Vehicles, comprar vehicle, cotxe, automòbils">
+  <meta name="author" content="Roc Alvarez Trulla">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--TITOL PAGINA-->
+  <title>Automòbils Trulla</title>
+
+  <!--FAVICON-->
+  <link rel="shortcut icon" type="image/svg+xml" href="./recursos/fav/favicon.svg">
+  <link rel="shortcut icon" type="image/png" href="./recursos/fav/favicon.png">
+
+  <!--STYLESHEET de BOOTSRAP-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!--SCRIPTS de BOOTSRAP-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+  <!--INICIALITZACIO FONTS I ICONES GOOGLE-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!--ICONES-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--FULLS D'ESTIL CSS-->
+  <link rel="stylesheet" href="../recursos/css/stylesheets.css" title="Full estil principal">
+
+</head>
+
+<body>
+
+  <!-- Capcelera -->
+  <header>
+    <a href="../index.html">
+      <img class="imatge-logocapcelera" src="../recursos/img/logo.png" alt="Logo">
+    </a>
+    <nav class="navbar navbar-expand-lg mx-auto navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../index.html">Inici</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./vehicles.html">Vehicles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./quiSom.html">Qui som</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contacte.html">Contacte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./iniciaSessio.html ">Inicia sessió</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./registrat.html">Registrat</a>
+            </li>
+            <!-- Icona extreta posant el nom de un d'aquest link: https://fonts.google.com/icons?icon.platform=web&icon.set=Material+Icons -->
+            <!-- Perfil -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tooltip" href="./perfil.html">
+                <span class="material-icons" style="font-weight: 500;">
+                  account_circle
+                </span>
+              </a>
+            </li>
+            <!-- Carrito -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tooltip" href="./cistella.html">
+                <span class="material-icons" style="font-weight: 500;">
+                  shopping_cart
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="breadcrumbs">
+      <nav style="--bs-breadcrumb-divider:'>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Inici</a></li>
+          <li class="breadcrumb-item active" aria-current="page">ODS</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contingut -->
+  <main>
+
+    <!--Contingut de la pagina-->
+    <section class="objectius-automobils-Trulla">
+      <h1>Objectius de Desenvolupament Sostenible</h1>
+      <p>Des d'Automòbils Trulla volem contribuir als objectius de desenvolupament sostenible de l'ONU. A continuació,
+        indiquem
+        quines pràctiques seguim pel que fa a la nostra activitat:</p>
+
+      <h3>Objectiu 7: Energia neta i assequible</h3>
+      <p>En l'actualitat només un 3-15% de les pàgines web utilitzen un <i>hosting</i> amb energia renovable. De mitja,
+        es consumeixen des d'1,2 g a 3,6 g de CO₂ per pàgina visitada [font: <a
+          href="https://www.websitecarbon.com/">Website Carbon</a>].
+        <br>Amb la intenció de reduir l'empremta de carboni produïda pels visitants del nostre web, duem a terme les
+        següents pràctiques:
+      <ul>
+        <li>El nostre allotjament web funciona amb energies renovables.</li>
+        <li>Optimitzem el nostre CSS i JavaScript perquè consumeixi la menor quantitat d'energia possible.</li>
+        <li>Creem i organitzem el contingut del nostre web perquè sigui del més fàcil accés possible, evitant així clics
+          extres i càrregues de contingut innecessàries.</li>
+        <li>Hem signat el <a href="https://www.sustainablewebmanifesto.com/">Sustainable Web Manifesto</a>.</li>
+      </ul>
+      </p>
+
+      <h3>Objectiu 16: Pau, justícia i institucions sòlides</h3>
+      <p>Vivim en un món en el qual tenim moltes injusticies significatives. La justícia no es igual per a tothom i s'ha
+        de promoure la eficàcia, responsabilitat i inclusivitat de les institucions en tots els nivell possibles.
+        <br>Per tant, duem a terme les pràctiques següents:
+      <ul>
+        <li>
+          Comptem amb una política de violència zero sense cap tipus de tolerància.
+        </li>
+        <li>
+          Proporcionem comptes eficaços i responsables al govern evitant així la promoció de diners en negre
+        </li>
+        <li>
+          En la nosra empresa no tolerem la explotació, tràfic i totes les formes de violència contra els infants.
+        </li>
+        <li>
+          Assegurem a tots els nivells l'adopció de decisions inclusives, participatives i representatives que
+          respongion a les necessitats.
+        </li>
+      </ul>
+      </p>
+    </section>
+
+    <section>
+      <p>Aquí baix, podeu veure tots els objectius. Feu clic al seu respectiu enllaç de "+info" per a saber-ne més de
+        cadascun dels objectius.</p>
+      <br>
+      <ul class="llistat-objectius">
+        <li style="background-image: url(../recursos/img/ods/00.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ODS/" target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/01.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/energia-neta-i-assequible-2/"
+            target="_blank">+INFO</a>
+        </li>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/02.jpg);">
+          <a class="detalls" href="http://www.sostenibilitat.ad/ods/fam_zero/" target="_blank">+INFO</a>
+        </li>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/03.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/salut/" target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/04.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/educacio/" target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/05.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/igualtat/" target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/06.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/aigua-neta-i-sanejament/" target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/07.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/energia-neta-i-assequible/"
+            target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/08.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/treball/" target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/09.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/industria/" target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/10.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/desigualtats/" target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/11.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/ciutats-i-comunitats-sostenibles/"
+            target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/12.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/consum-i-produccio-responsables/"
+            target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/13.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/accio-climatica/" target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/14.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/submarina/" target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/15.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/vida-terrestre/" target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/16.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/pau/" target="_blank">+INFO</a>
+        </li>
+        <li style="background-image: url(../recursos/img/ods/17.jpg);">
+          <a class="detalls" href="https://www.sostenibilitat.ad/ods/alianca/" target="_blank">+INFO</a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!------------ Peu de pagina ------------>
+  <footer>
+    <div class="contingut-peu">
+      <div id="comiat">
+        <a id="logo-peu" href="#">Automòbils trulla</a>
+        <p>Troba el teu vehicle ideal</p>
+      </div>
+      <div id="xarxes-socials">
+        <h2 class="titol-peu">Conecta</h2>
+        <div style="margin-left: 4%; margin-right: 4%;">
+          <ul class="enllacos-peu">
+            <li>
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+            </li>
+            <li>
+              <a href="#" class="fa fa-instagram"></a>
+              <a href="#" class="fa fa-youtube"></a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div id="sobre-nosaltres">
+        <h2 class="titol-peu">Sobre Automòbils Trulla</h2>
+        <ul class="enllacos-peu">
+          <li>
+            <a href="./quiSom.html">Qui som</a>
+          </li>
+          <li>
+            <a href="./contacte.html">Contacta amb nosaltres</a>
+          </li>
+          <li>
+            <a href="./ods.html">ODS</a>
+          </li>
+          <li>
+            <a href="./faqs.html">FAQs</a>
+          </li>
+        </ul>
+      </div>
+      <div id="informacio-legal">
+        <h2 class="titol-peu">Informació Legal</h2>
+        <ul class="enllacos-peu">
+          <li>
+            <a class="disabled">Avís legal</a>
+          </li>
+          <li>
+            <a class="disabled">Termes d'ús</a>
+          </li>
+          <li>
+            <a class="disabled">Política de cookies</a>
+          </li>
+          <li>
+            <a class="disabled">Política de privacitat</a>
+          </li>
+        </ul>
+      </div>
+      <div id="llicencia">
+        <img src="../recursos/img/llicencia/cc_icon_white_x2.png" alt="CC">
+        <img src="../recursos/img/llicencia/attribution_icon_white_x2.png" alt="BY">
+        <img src="../recursos/img/llicencia/sa_white_x2.png" alt="SA">
+        <br>
+        <span>El contingut està disponible sota la llicència <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank">Atribució - CompartirIgual
+            4.0</a>
+          si no s'indica el contrari.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

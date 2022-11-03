@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+
+  <!--META TAGS-->
+  <meta charset="UTF-8">
+  <meta name="description" content="Compra i venda de tot tipus de vehicles">
+  <meta name="keywords" content="Vehicles, comprar vehicle, cotxe, automòbils">
+  <meta name="author" content="Roc Alvarez Trulla">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--TITOL PAGINA-->
+  <title>Automòbils Trulla</title>
+
+  <!--FAVICON-->
+  <link rel="shortcut icon" type="image/svg+xml" href="./recursos/fav/favicon.svg">
+  <link rel="shortcut icon" type="image/png" href="./recursos/fav/favicon.png">
+
+  <!--STYLESHEET de BOOTSRAP-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!--SCRIPTS de BOOTSRAP-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+  <!--INICIALITZACIO FONTS I ICONES GOOGLE-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!--ICONES-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--FULLS D'ESTIL CSS-->
+  <link rel="stylesheet" href="../recursos/css/stylesheets.css" title="Full estil principal">
+
+</head>
+
+
+
+<body>
+
+  <!-- Capcelera -->
+  <header>
+    <a href="../index.html">
+      <img class="imatge-logocapcelera" src="../recursos/img/logo.png" alt="Logo">
+    </a>
+    <nav class="navbar navbar-expand-lg mx-auto navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../index.html">Inici</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./vehicles.html">Vehicles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./quiSom.html">Qui som</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contacte.html">Contacte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./iniciaSessio.html ">Inicia sessió</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./forum.html">Registrat</a>
+            </li>
+            <!-- Icona extreta posant el nom de un d'aquest link: https://fonts.google.com/icons?icon.platform=web&icon.set=Material+Icons -->
+            <!-- Perfil -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tooltip" href="./perfil.html">
+                <span class="material-icons" style="font-weight: 500;">
+                  account_circle
+                </span>
+              </a>
+            </li>
+            <!-- Carrito -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tooltip" href="./cistella.html">
+                <span class="material-icons" style="font-weight: 500;">
+                  shopping_cart
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="breadcrumbs">
+      <nav style="--bs-breadcrumb-divider:'>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Inici</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Registrat</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!------------ Contingut ------------>
+  <main>
+    <script>
+      //Variables globals per actuar sobre elements
+      var button;
+      var formu;
+      var nom;
+      var controlNom;
+      //Càrrega del DOM --> init de variables i associació d'event
+      window.onload = function () {
+        init();
+      }
+      function init() {
+        //Accés als elements de la Vista (HTML)
+        nom = document.getElementById("nom");
+        controlNom = document.getElementById("controlNom");
+        formu = document.getElementById("form01");
+        button = document.getElementById("bEnvia");
+        button.style.visibility = 'hidden';
+        //Quan s'excuti una entrada (input) disparar event validar
+        formu.addEventListener("input", validar);
+        //Al camp nom, associar event blur (quan perd el focus) 
+        nom.addEventListener("blur", controlaNom);
+      }
+      //Controla Nom mirar si compleix el pattern
+      //associat i actuar (missatge d'error + estil)
+      function controlaNom(event) {
+        let valid = nom.checkValidity() ? nom.style.background = "#red" : nom.style.background = "#FFDDDD";
+        event.target.checkValidity() ? controlNom.style.visibility = "hidden" : controlNom.style.visibility = "visible";
+      }
+      //Aquesta funció es dispara quan hi han canvis en les entrades (input)
+      function validar(event) {
+        //El formulari respon a tots els patterns de les inputs ??
+        let valid1 = formu.checkValidity();
+        //Cas de que si, el botó enviar es fa visible
+        if (valid1) {
+          button.style.visibility = 'visible';
+        } else {
+          button.style.visibility = 'hidden';
+        }
+      }
+
+    </script>
+
+
+    <section>
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-dark text-white" style="border-radius: 1rem;">
+              <div class="card-body p-5 text-center">
+
+                <div class="mb-md-5 mt-md-4 pb-5">
+                  <form id="form01">
+
+                    <h2 class="fw-bold mb-2 text-uppercase">Registrat</h2>
+                    <p class="text-white-50 mb-5">Omple les dades per registrar-te!</p>
+
+                    <label for="nom"> Nom : </label>
+                    <input type="text" name="nom" pattern="[A-Za-z]{3,}" required id="nom"
+                      title="Sense numeros please"><span id="controlNom" style="color:red;visibility:hidden"> Nom
+                      incorrecte </span>
+                    </p>
+                    <label for="cognom"> Cognom: </label>
+                    <input type="text" name="cognom" required id="cognom">
+                    <button id="bEnvia" type="submit">Envia</button>
+
+
+                    <div class="form-outline form-white mb-4">
+                      <label for="nomm"> Nom : </label>
+                      <input type="text" name="nomm" pattern="[A-Za-z]{3,}" required id="nom"
+                        title="Sense numeros please"><span id="controlNom" style="color:red;visibility:hidden"> Nom
+                        incorrecte </span>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" id="controlCognom" class="form-control form-control-lg" />
+                      <label class="form-label" for="cognom">Cognoms</label>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="email" id="controlEmail" class="form-control form-control-lg"
+                        placeholder="exemple@exemple.com" />
+                      <label class="form-label" for="email">Email</label>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="tel" id="typeTelX" class="form-control form-control-lg"
+                        placeholder="+376-3/6/7/8XXXXX" />
+                      <label class="form-label" for="telefon">Telèfon</label>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="password" id="controlContrasenya" class="form-control form-control-lg"
+                        placeholder="Majúscules, minúscules i numeros" />
+                      <label class="form-label" for="contrasenya">Contrasenya</label>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="password" id="controlVerificacioContrasenya" class="form-control form-control-lg"
+                        placeholder="Majúscules, minúscules i numeros" />
+                      <label class="form-label" for="verificaContrasenya">Confirmar contrasenya</label>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="date" id="controlData" class="form-control form-control-lg" />
+                      <label class="form-label" for="data">Data naixement</label>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" id="controlAdreça" class="form-control form-control-lg" />
+                      <label class="form-label" for="adreça">Adreça</label>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" id="controlPoblacio" class="form-control form-control-lg" />
+                      <label class="form-label" for="poblacio">Poblacio</label>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" id="controlPais" class="form-control form-control-lg" />
+                      <label class="form-label" for="pais">Pais</label>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" id="controlCodiPostal" class="form-control form-control-lg"
+                        placeholder="ADXXX" />
+                      <label class="form-label" for="codiPostal">Codi postal</label>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="checkbox" id="controlEspectacle1" name="espectacle1" value="1">
+                      <label for="espectacle3"> Espectacle 1</label><br>
+                      <input type="checkbox" id="controlEspectacle2" name="espectacle2" value="2">
+                      <label for="espectacle2"> Espectacle 2</label><br>
+                      <input type="checkbox" id="controlEspectacle3" name="espectacle3" value="3">
+                      <label for="espectacle3"> Espectacle 3</label><br><br>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" id="controlIban" class="form-control form-control-lg"
+                        placeholder="ADXXXXXXXXXXXXXXXXXXXXXX" />
+                      <label class="form-label" for="iban">Dades bancaries</label>
+                    </div>
+
+                    <button type="button" name="boto-sessio">Inicia sessio</button>
+                    <br></br>
+                    <p class="mb-0" style="text-align: center;">O inicia sessió amb:</p>
+                    <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                      <a href="#!" class="text-white"><i class="fa fa-facebook fa-lg"></i></a>
+                      <a href="#!" class="text-white"><i class="fa fa-google fa-lg mx-4 px-2"></i></a>
+                      <a href="#!" class="text-white"><i class="fa fa-twitter fa-lg"></i></a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+  <!------------ Peu de pagina ------------>
+  <footer>
+    <div class="contingut-peu">
+      <div id="comiat">
+        <a id="logo-peu" href="#">Automòbils trulla</a>
+        <p>Troba el teu vehicle ideal</p>
+      </div>
+      <div id="xarxes-socials">
+        <h2 class="titol-peu">Conecta</h2>
+        <div style="margin-left: 4%; margin-right: 4%;">
+          <ul class="enllacos-peu">
+            <li>
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+            </li>
+            <li>
+              <a href="#" class="fa fa-instagram"></a>
+              <a href="#" class="fa fa-youtube"></a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div id="sobre-nosaltres">
+        <h2 class="titol-peu">Sobre Automòbils Trulla</h2>
+        <ul class="enllacos-peu">
+          <li>
+            <a href="./quiSom.html">Qui som</a>
+          </li>
+          <li>
+            <a href="./contacte.html">Contacta amb nosaltres</a>
+          </li>
+          <li>
+            <a href="./ods.html">ODS</a>
+          </li>
+          <li>
+            <a href="./faqs.html">FAQs</a>
+          </li>
+        </ul>
+      </div>
+      <div id="informacio-legal">
+        <h2 class="titol-peu">Informació Legal</h2>
+        <ul class="enllacos-peu">
+          <li>
+            <a class="disabled">Avís legal</a>
+          </li>
+          <li>
+            <a class="disabled">Termes d'ús</a>
+          </li>
+          <li>
+            <a class="disabled">Política de cookies</a>
+          </li>
+          <li>
+            <a class="disabled">Política de privacitat</a>
+          </li>
+        </ul>
+      </div>
+      <div id="llicencia">
+        <img src="../recursos/img/llicencia/cc_icon_white_x2.png" alt="CC">
+        <img src="../recursos/img/llicencia/attribution_icon_white_x2.png" alt="BY">
+        <img src="../recursos/img/llicencia/sa_white_x2.png" alt="SA">
+        <br>
+        <span>El contingut està disponible sota la llicència <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank">Atribució - CompartirIgual
+            4.0</a>
+          si no s'indica el contrari.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

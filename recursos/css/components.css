@@ -1,0 +1,842 @@
+/*  
+*  PART ESPECIFIQUES DELS ELEMENTS DE LES PAGINES
+*   
+*  Index:
+*   
+*  1.0 - Comuns (linia 40)
+*      1.1 - Capcalera (linia 42)
+*  2.0 - Pagina inici (linia 84)
+*      2.1 - Vehicles destacats (linia 86)
+*      2.2 - Concessionari (linia 123)
+*  3.0 - Iniciar Sessio / registrat (linia 149)
+*      3.1 Modal formulari (linia 154)
+*  4.0 - Pagina qui som (linia 164)
+*  5.0 - Pagina ODS (linia 212)
+*  6.0 - Pagina FAQs (linia 257)
+*  7.0 - Pagina perfil (linia 296)
+*  8.0 - Pagina vehicles (linia 334)
+*      8.1 - filtres (linia 400)
+*  9.0 - Pagina cistella (linia 462)
+*  10.0 - Pagina vehicles especific (linia 486)
+*  11.0 - modal (linia 554)
+*  12.0 - Peu de pagina (linia 628)
+*  13.0 - Media queries (linia 680)
+*      13.1 - MQs mobil (linia 682)
+*      13.2 - MQs tablet (linia 778)
+*/
+
+
+
+/*** 1.0 - Comuns ***/
+
+/*** 1.1 - Capcalera ***/
+.imatge-logocapcelera {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+.imatge-capcalera {
+    background-image: url("../img/portada.jpg");
+    width: 100%;
+    min-height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.llegibilitat-capcalera {
+    width: 100%;
+    min-height: 300px;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.llegibilitat-capcalera p {
+    font-family: 'Oswald';
+    font-size: 420%;
+    line-height: normal;
+    padding: 0 5%;
+    text-align: center;
+}
+.llegibilitat-capcalera h2 {
+    font-family: 'Oswald';
+    color: #F6D42F;
+    font-size: 150%
+}
+
+
+/*** 2.0 - Pagina inici ***/
+
+/*** 2.1 - Vehicles destacats ***/
+.galeria-imatges {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin: 2% 0 5% 0;
+    padding: 1%;
+}
+.marc-galeria {
+    position: relative;
+}
+.marc-galeria figcaption {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-family: 'Oswald';
+    border-radius: 0 0 5px 5px;
+}
+.imatge-galeria {
+    border-radius: 5px;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;/* temps de la animacio */
+    aspect-ratio: 3/2;
+}
+.imatge-galeria:hover {
+    transform: scale(1.15); /* Animacio de zoom */
+}
+
+/*** 2.2 - Concessionari ***/
+.concessionari {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "imgConcessionari textConcessionari textConcessionari" ;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.concessionariimg {
+    grid: imgConcessionari;
+    border-radius: 5px;
+    margin: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 100%;
+    max-height: 400px;
+}
+.concessionaritext {
+    grid-area: textConcessionari;
+    text-align: justify;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/*** 3.0 - Iniciar Sessio / registrat ***/
+		button {
+			color: #000000;
+			background-color: #f6d42f;
+			font-size: 25px;
+			border: 1px solid #f6d443;
+			border-radius: 50px;
+			padding: 15px 50px;
+			cursor: pointer
+		}
+		button:hover {
+			color: #F22248;
+			background-color: #f6d42f;
+		}
+
+/*** 3.1 - Modal formulari ***/
+.form-body hr {
+    margin: 2em 0 .15em 0;
+}
+.form-body label {
+    color:#c1c1c1;
+    padding: 0.8em 0 0.25em 0;
+}
+.check-label {
+    padding: 0!important;
+}
+
+input.error,
+select.error {
+    border-width: 2px!important;
+    border-color:red!important;
+    background-image: url("../img/error.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 0!important;
+    border-bottom-right-radius: 0!important;
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+}
+input.error:valid,
+select.error:valid {
+    border-width: 2px!important;
+    border-color: greenyellow!important;
+    background-image: url("../img/correcte.png");
+    border-image-width: 100%;
+    background-position: right center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 0.25em!important;
+    border-bottom-right-radius: 0.25em!important;
+}
+#confirm:focus:invalid {
+    border-width: 2px!important;
+    border-color:red!important;
+    background-image: url("../img/error.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 0!important;
+    border-bottom-right-radius: 0!important;
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+}
+.aclariment {
+    color:#c1c1c1;
+    font-size: .9em;
+    text-align: left;
+    font-style: italic;
+    vertical-align: top;
+}
+
+form:invalid button {
+    background-color: #c1c1c1!important;
+    border-color: #c1c1c1!important;
+    pointer-events: none;
+}
+form:invalid button:hover {
+    color:#000;
+}
+#cookies {
+    color:#c1c1c1!important;
+    font-family: 'Courier New', Courier, monospace;
+}
+fieldset input {
+    padding: 2px 4px;
+    border:2px solid #c1c1c1;
+    border-radius: .25em;
+    line-height: 1.5em;
+    width:100%;
+}
+form select {
+    padding: 2px 4px;
+    border:2px solid #c1c1c1;
+    border-radius: .25em;
+    line-height: 1.5em;
+    width:100%;
+}
+fieldset legend {
+    font-family: 'Oswald';
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    color:#F6D42F;
+    margin-bottom: .5em;
+}
+fieldset:disabled input {
+    background-color:#c1c1c1;
+    border-color: greenyellow!important;
+    background-image: url("../img/correcte.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+.form-body input:required:valid, select:required:valid {
+    border-width: 2px!important;
+    border-color: greenyellow!important;
+    background-image: url("../img/correcte.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+#dataNaix, #cp {
+    background-image: none!important;
+}
+#errorNom, #errorCognom, #errorData, #errorEmail, #errorTel, #errorAdr, #errorPob, #errorCP, #errorIban, #errorPass, #errorConfirm {
+    width:100%;
+    margin-top: 0;
+    padding: 0 .5em;
+    float:left;
+    background-color: red;
+    color:#FFF!important;
+    border-bottom-left-radius: 0.25em;
+    border-bottom-right-radius: 0.25em;
+    background-position: right center;
+    background-repeat: no-repeat;
+    }
+
+.form-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+    height: 420px!important;
+    overflow-y: auto;
+  }
+.form-body::-webkit-scrollbar {
+    width: 10px;
+  }
+.form-body::-webkit-scrollbar-track {
+    background: #4f4f4f; 
+  }
+.form-body::-webkit-scrollbar-thumb {
+    background: #999999; 
+  }
+.form-body::-webkit-scrollbar-thumb:hover {
+    background: #996699; 
+  }
+.titol-formulari {
+    font-family: 'Lobster Two'!important;
+    text-transform: none!important;
+    color:greenyellow!important;
+    text-align: center!important;
+    font-size: 1.6em!important;
+    letter-spacing: 0!important;
+}
+.modal-login-cont{
+    padding:1.5em;
+}
+
+/*** 4.0 - Pagina qui som ***/
+.equip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2em;
+    justify-content: center;
+    align-content: center;
+    grid-auto-flow: column;
+}
+.membre-equip {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(auto);
+    grid-template-areas: "imatge" "nom" "posicio";
+    gap: 4px;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 3em;
+}
+.membre-equip img {
+    grid-area: imatge;
+    display: block;
+    max-width: 240px;
+    height: auto;
+    object-fit: cover;
+    text-align: center;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    filter: grayscale(100%);
+}
+.membre-equip h3 {
+    grid-area: nom;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    color: #f6d42f;
+    font-size: 1.5em;
+}
+.membre-equip h4 {
+    grid-area: posicio;
+    color: #999999;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+}
+
+/*** 5.0 - pagina ODS ***/
+.objectius-automobils-Trulla h3 {
+    font-family: 'Oswald';
+    font-weight: 400;
+    color: #f6d42f;
+    font-size: 1.5em;
+}
+.objectius-automobils-Trulla ul {
+    padding-left: 1em;
+    list-style-position: inside;
+    list-style-type: "> ";
+}
+.objectius-automobils-Trulla ul li::marker {
+    font-family: 'Oswald';
+    color: #f6d42f;
+    font-weight: 900;
+}
+.llistat-objectius {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15vh, 100px));
+    grid-auto-rows: minmax(15vh, 100px);
+    gap: 2em;
+    justify-content: space-evenly;
+    padding-bottom: 2em;
+}
+.llistat-objectius ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.llistat-objectius li {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: bottom;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.detalls {
+    font-family: 'Oswald';
+    letter-spacing: 0.25em;
+    padding-right: 0.5em;
+    padding-bottom: 0.2em;
+    font-size: 0.8em;
+    color: #FFF;
+    text-shadow: 1px 1px 5px #333;
+}
+.llistat-objectius a:hover {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: 700;
+}
+
+/*** 6.0 . Pagina FAQs ***/
+.header{
+  border-radius: 20px 20px 0px 0px;
+  padding: 10px 0px;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.faq-item{
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.faq-body{
+  display: none;
+  margin-top: 30px;
+  color: #c1c1c1;
+}
+.faq-wrapper{
+  width: 75%;
+  margin: 0 auto;
+}
+.faq-inner{
+  padding: 30px;
+}
+/* signe del + */
+.faq-plus{
+  float: right;
+  font-size: 1.4em;
+  line-height: 1em;
+  cursor: pointer;
+}
+/* barra entre faqs */
+hr {
+  height: 2px;
+  color: yellow;
+  border-color: yellow;
+  background-color: yellow;
+}
+
+/*** 7.0 - Pagina perfil ***/
+.perfil {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "textperfil textperfil imgperfil" ;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.perfilimg {
+    grid: imgperfil;
+    margin: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 100%;
+    max-height: 800px;
+    display: block;
+    max-width: 240px;
+    height: auto;
+    object-fit: cover;
+    text-align: center;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+.perfiltext {
+    grid-area: textperfil;
+    text-align: justify;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/*** 8.0 - Pagina vehicles ***/
+.vehicles {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-areas: "filtrevehicles articlevehicles articlevehicles" ;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.vehiclesfiltre {
+    grid: filtrevehicles;
+    border-radius: 5px;
+    margin-top: 0%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 100%;
+}
+.vehiclesarticle {
+    grid-area: articlevehicles;
+    text-align: justify;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.buttonpreu {
+  color: #000000;
+  background-color: #f6d42f;
+  font-size: 20px;
+  border: 1px solid #f6d443;
+  border-radius: 50px;
+  padding: 7px 20px;
+  cursor: pointer
+}
+.buttonpreu:hover {
+  color: #F22248;
+  background-color: #f6d42f;
+}
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color:  #f6d42f;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: none;
+}
+
+ul.pagination li a.active {
+    background-color: #444444;
+}
+
+ul.pagination li a:hover:not(.active) {
+    color: #F22248;
+}
+
+div.center {text-align: center;}
+
+/*** 8.1 - filtres ***/
+.range_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.sliders_control {
+  position: relative;
+  min-height: 25px;
+}
+
+.form_control {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  color: #635a5a;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: all;
+  width: 24px;
+  height: 24px;
+  background-color: #f6d42f;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #C6C6C6;
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  pointer-events: all;
+  width: 24px;
+  height: 24px;
+  background-color: #f6d42f;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #C6C6C6;
+  cursor: pointer;  
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  background: #F22248;
+}
+
+input[type="range"] {
+  -webkit-appearance: none; 
+  appearance: none;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  background-color: #C6C6C6;
+  pointer-events: none;
+}
+
+#fromSlider {
+  height: 0;
+  z-index: 1;
+}
+
+/***  9.0 - Pagina cistella ***/
+.gridCistella{
+    display: grid;
+    grid-template-columns: 0.2fr 1.5fr 2fr 1fr auto;
+    grid-gap: 1rem;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin: 0% 0 0% 0;
+}
+img.imgcistella {
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+.nomipreucistella {
+    font-size: 1.25em;
+    line-height: 1.25em;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/***  10.0 - Pagina vehicles especific ***/ 
+.gridVehicleEspecific {
+    display: grid;
+    grid-template-rows: 2fr 2fr auto;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.caracteristiquesvehicle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+
+/*** 11.0 - modal ***/
+/*:::Boton-Modal:::*/
+.boton-modal{
+    padding: 40px;
+}
+.boton-modal label{
+    padding: 10px 15px;
+    background-color: #f6d42f;
+    color: black;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.boton-modal label:hover{
+    background-color: #F22248;
+}
+/*:::Fin Boton-Modal:::*/
+/*:::finestra Modal:::*/
+#btn-modal{
+    display: none;
+}
+.container-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(144, 148, 150, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+#btn-modal:checked ~ .container-modal{
+    display: flex;
+}
+.content-modal{
+    width: 560px;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.content-modal .btn-cerrar{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+.content-modal .btn-cerrar label{
+    padding: 7px 10px;
+    background-color: #f6d42f;
+    color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.content-modal .btn-cerrar label:hover{
+    background-color:#F22248;
+}
+.cerrar-modal{
+    width:100%;
+    height: 100vh;
+    position: absolute;
+    top:0; left: 0;
+    z-index: -1;
+}
+@media screen and (max-width:800px) {
+    .content-modal{
+        width: 90%;
+    }
+}
+/*:::Fi finestra Modal:::*/
+
+/*** 12.0 - Peu de pagina ***/
+#logo-peu {
+    font-family: 'Oswald';
+    color: #F22248;
+    font-size: 350%;
+    line-height: normal;
+}
+#comiat {
+    grid-area: comiat;
+    margin: 0 10%;
+}
+#comiat span {
+    /*tamany icona boto*/
+    font-size: 15px;
+}
+#xarxes-socials {
+    grid-area: xarxes-socials;
+    margin-left: 10%;
+    margin-top: 6px;
+}
+#sobre-nosaltres {
+    grid-area: sobre-nosaltres;
+    margin: 0 10%;
+}
+#informacio-legal {
+    grid-area: informacio-legal;
+    margin: 0 10%;
+}
+#llicencia {
+    grid-area: llicencia;
+    text-align: center;
+    background-color: #000000;
+    color: #c1c1c1;
+    font-family: 'Oswald';
+    font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 0.5% 0;
+}
+#llicencia>img {
+    width: 20px;
+}
+#llicencia a {
+    color: #c1c1c1;
+    font-size: 0.75rem!important;
+}
+#llicencia a:hover {
+    text-decoration: underline;
+    color: #999999;
+    font-size: 0.75rem!important;
+}
+
+/*** 13.0 - Media queries ***/
+
+/*** 13.1 - MQs mobil ***/
+@media only screen and (min-width: 0px) and (max-width: 580px) {
+    .concessionari {
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-rows: auto auto;
+        grid-template-areas: "imgConcessionari" "textConcessionari" ;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .concessionariimg {
+        grid: imgConcessionari;
+        border-radius: 5px;
+        margin-left: 5%;
+        margin-right: 35%;
+        width: 100%;
+        max-height: 400px;
+    }
+    .concessionaritext {
+        grid-area: textConcessionari;
+        text-align: justify;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .imatge-capcalera {
+        display: none;
+    }
+    .galeria-imatges {
+        grid-template-columns: auto;
+    }
+    .imatge-galeria:hover {
+        filter: none;
+        opacity: .7;
+    }
+    .equip {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+    }
+    #llicencia span {
+        display: none;
+    }
+    #llicencia img {
+        padding-top: 1%;
+    }
+}
+
+/*** 13.2 - MQs tablet ***/
+@media only screen and (min-width: 580px) and (max-width: 1024px) {
+    .imatge-capcalera {
+        background-attachment: scroll;
+        min-height: 200px!important;
+    }
+    .llegibilitat-capcalera {
+        min-height: 200px!important;
+    }
+    .llegibilitat-capcalera p {
+        font-size: 300%;
+    }
+    .equip {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, auto);
+    }
+}

@@ -1,0 +1,25 @@
+/* 
+*   Per realitzar el CSS he trobat interesant seguir l'estructura ITCCS
+*   que segueix una estructura piramidal
+*/
+
+/* 1. Settings  */ /* No l'utilitzaré */
+
+
+/* 2. Tools */  /* No l'utilitzaré */
+
+
+/* 3. Generic */  /* Codi genèric per estandaritzar */ /* "EX: *{padding: 0; margin: 0}" */
+@import "./generic.css";
+
+/* 4. Elements */  /* Regles que afecten als tags HTML */ /* "EX: h1{}" */
+@import "./elements.css";
+
+/* 5. Objects */  /* Els objectes. Les classes genèriques reutilitzables per tot el projecte */ /* "EX: .grid-container{}" */
+@import "./objects.css";
+
+/* 6. Components */  /* Parts específiques del projecte */ /* "EX: barra-busqueda{} */
+@import "./components.css";
+
+/* 7. Trumps o Utilities */  /* Regles que anules capes anteriors. NOMÉS AQUÍ ES POT UTILITZAR !IMPORTANT */ /* "EX: .d-none{display:none!important}" */
+@import "./utilities.css";

@@ -1,0 +1,183 @@
+/* 
+*  ESTIL BASE DELS TAGS DE LA WEB
+*/
+
+body {
+  background-color: black;
+  font-family: Oswald;
+  font-size:1em;
+  line-height: 1.375em;
+}
+
+/*---------- Capcelera ----------*/
+header {
+  background-color: black;
+}
+
+/*---------- Contingut ----------*/
+main {
+  background-color: black;
+  font-family: Oswald;
+  color: black;
+}
+section {
+  font-family: Oswald;
+  color: #c1c1c1;
+}
+hr {
+  border: 0;
+  border-top: 2px solid #c1c1c1;
+  margin: 2em 10%;
+}
+h1 {
+  font-family: 'Oswald';
+  color: #F6D42F;
+  font-size:3em;
+  line-height: 1.05em;
+}
+h2 {
+  font-family: 'Oswald';
+  color: #F6D42F;
+  font-size:2.25em;
+  line-height: 1.25em;
+}
+h3 {
+  font-family: 'Oswald';
+  color: #F6D42F;
+  font-size:1.75em;
+  line-height: 1.25em;
+}
+h4 {
+  font-family: 'Oswald';
+  color: #F6D42F;
+  font-weight: 500;
+  font-size:1.125em;
+  line-height: 1.22222222em;
+}
+h5 {
+  font-family: 'Oswald';
+  color: #F6D42F;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+h6 {
+  font-family: 'Oswald';
+  color: #F6D42F;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+blockquote {
+  font-size:1.5em;
+  line-height: 1.45833333em;
+}
+p {
+  text-align: justify;
+}
+a {
+  text-decoration: none;
+  color: #F6D42F;
+}
+a:hover {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  color: #F22248;
+}
+.lead {
+  font-family: 'Oswald';
+  color: #c1c1c1;
+  font-weight: 300;
+}
+
+/*---------- Footer / Peu de pàgina ----------*/
+footer {
+  background-color: #F6D42F;
+  color: #000000;
+}
+footer h2 {
+  color: black;
+  font-family: 'Oswald';
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size:1.125em;
+  line-height: 1.22222222em;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+footer a {
+  color: black;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #F22248;
+  text-decoration:none;
+}
+.active {
+  color: white!important;
+}
+footer p {
+  font-family: 'Oswald';
+  color: black;
+  font-weight: 300;
+  font-size:1.5em;
+  line-height: 1.45833333em;
+  letter-spacing: 0.05em;
+  text-align: justify;
+}
+
+/*---------- Mobil ----------*/
+@media only screen and (min-width: 1px) and (max-width: 579px) {
+  body {
+    line-height: 1.25em;
+  }
+  h1 {
+    padding: 5% 0;
+    font-size:2.5em;
+    line-height: 1.125em;
+  }
+  h2 {
+    font-size:2em;
+    line-height: 1.25em;
+  }
+  h3 {
+    font-size:1.5em;
+    line-height: 1.25em;
+  }
+  h4 {
+    font-size:1.125em;
+    line-height: 1.11111111em;
+  }
+  blockquote {
+    font-size:1.25em;
+    line-height: 1.25em;
+  }
+  footer p {
+    font-size:1.25em;
+    line-height: 1.25em;
+  }
+}
+
+/*---------- Tablet ----------*/
+@media only screen and (min-width: 580px) and (max-width: 1024px) {
+  body {
+    line-height: 1.25em;
+  }
+  h1 {
+    padding: 5% 0;
+    font-size:2em;
+    line-height: 1.25em;
+  }
+  h2 {
+    font-size:1.625em;
+    line-height: 1.15384615em;
+  }
+  h3 {
+    font-size:1.375em;
+    line-height: 1.13636364em;
+  }
+  h4 {
+    font-size:1.125em;
+    line-height: 1.11111111em;
+  }
+}
